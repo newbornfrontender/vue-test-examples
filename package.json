@@ -1,0 +1,12 @@
+{
+  "name": "vue-test-examples",
+  "version": "1.0.0",
+  "scripts": {
+    "serve": "vue serve --copy ./src/main.js",
+    "build": "vue build ./src/main.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "vue-router": "^3.0.1"
+  }
+}
