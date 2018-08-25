@@ -6,6 +6,8 @@
     "serve": "vue serve --copy ./src/main.js",
     "build": "vue build ./src/main.js"
   },
+  "repository": "https://github.com/newbornfrontender/vue-test-examples.git",
+  "author": "Infant Frontender <newbornfrontender@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "vue-router": "^3.0.1"
