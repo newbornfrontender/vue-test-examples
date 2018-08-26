@@ -1,3 +1,11 @@
 <template>
-  <section>Dynamic attributes</section>
+  <section>
+    <p>Dynamic attributes</p>
+  </section>
 </template>
+
+<script>
+export default {
+  name: 'DynamicAttributes',
+};
+</script>
