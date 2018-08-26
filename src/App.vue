@@ -1,19 +1,19 @@
 <template>
   <section id="app">
-    <Header v-bind:title="title"/>
-    <Main/>
+    <ComponentHeader v-bind:title="title"/>
+    <ComponentMain/>
   </section>
 </template>
 
 <script>
-import Header from './components/Header.vue';
-import Main from './components/Main.vue';
+import ComponentHeader from './components/ComponentHeader.vue';
+import ComponentMain from './components/ComponentMain.vue';
 
 export default {
   name: 'App',
   components: {
-    Header,
-    Main,
+    ComponentHeader,
+    ComponentMain,
   },
   data() {
     return {
