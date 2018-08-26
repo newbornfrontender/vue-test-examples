@@ -2,9 +2,9 @@
 
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
-import DynamicAttributes from './views/DynamicAttributes.vue';
-import MediaQueries from './views/MediaQueries.vue';
+import ViewHome from './views/ViewHome.vue';
+import ViewDynamicAttributes from './views/ViewDynamicAttributes.vue';
+import ViewMediaQueries from './views/ViewMediaQueries.vue';
 
 Vue.use(Router);
 
@@ -32,7 +32,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: 'ViewHome',
       meta: {
         lang: () => {
           return lang('ru');
@@ -41,11 +41,11 @@ export default new Router({
           return title();
         },
       },
-      component: Home,
+      component: ViewHome,
     },
     {
       path: '/dynamic-attributes',
-      name: 'DynamicAttributes',
+      name: 'ViewDynamicAttributes',
       meta: {
         lang: () => {
           return lang('ru');
@@ -54,11 +54,11 @@ export default new Router({
           return title('Dynamic attributes');
         },
       },
-      component: DynamicAttributes,
+      component: ViewDynamicAttributes,
     },
     {
       path: '/media-queries',
-      name: 'MediaQueries',
+      name: 'ViewMediaQueries',
       meta: {
         lang: () => {
           return lang('ru');
@@ -67,7 +67,7 @@ export default new Router({
           return title('Media queries');
         },
       },
-      component: MediaQueries,
+      component: ViewMediaQueries,
     },
   ],
 });
