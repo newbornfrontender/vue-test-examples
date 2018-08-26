@@ -4,6 +4,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 import DynamicAttributes from './views/DynamicAttributes.vue';
+import MediaQueries from './views/MediaQueries.vue';
 
 Vue.use(Router);
 
@@ -33,12 +34,10 @@ export default new Router({
       path: '/',
       name: 'Home',
       meta: {
-        /* eslint-disable-next-line no-unused-vars */
-        lang: (route) => {
+        lang: () => {
           return lang();
         },
-        /* eslint-disable-next-line no-unused-vars */
-        title: (route) => {
+        title: () => {
           return title();
         },
       },
@@ -48,16 +47,27 @@ export default new Router({
       path: '/dynamic-attributes',
       name: 'DynamicAttributes',
       meta: {
-        /* eslint-disable-next-line no-unused-vars */
-        lang: (route) => {
+        lang: () => {
           return lang();
         },
-        /* eslint-disable-next-line no-unused-vars */
-        title: (route) => {
+        title: () => {
           return title('Dynamic attributes');
         },
       },
       component: DynamicAttributes,
+    },
+    {
+      path: '/media-queries',
+      name: 'MediaQueries',
+      meta: {
+        lang: () => {
+          return lang();
+        },
+        title: () => {
+          return title('Media queries');
+        },
+      },
+      component: MediaQueries,
     },
   ],
 });
