@@ -1,5 +1,8 @@
 <template>
   <header>
+    <div>
+      <span>{{ title }}</span>
+    </div>
     <nav>
       <ul>
         <li
@@ -18,20 +21,23 @@ import _ from 'lodash';
 
 export default {
   name: 'Header',
+  props: {
+    title: String,
+  },
   data () {
     return {
       list: [{
         order: '1',
         url: '/',
-        text: 'Home',
+        text: 'Главная',
       }, {
         order: '3',
         url: '/dynamic-attributes',
-        text: 'Dynamic attributes',
+        text: 'Динамические аттрибуты',
       }, {
         order: '2',
         url: '/media-queries',
-        text: 'Media queries',
+        text: 'Медиа выражения',
       }],
     };
   },
