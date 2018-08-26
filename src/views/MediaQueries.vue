@@ -1,10 +1,10 @@
 <template>
   <section>
-    <h1>Media queries</h1>
+    <h1>Медиа выражения</h1>
     <p>
       <b>{{ window.width }}</b>
     </p>
-    <p v-if="bp.max.md">Hidden text</p>
+    <p v-if="bp.max.md">Скрытый текст</p>
   </section>
 </template>
 
