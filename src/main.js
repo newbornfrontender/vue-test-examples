@@ -1,8 +1,13 @@
+/* eslint-disable no-extra-semi */
+
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 
 Vue.config.productionTip = false;
+
+// -----------------------------------------------------------------------------
+// Мета-информация
 
 router.afterEach((to) => {
   Vue.nextTick(() => {
@@ -12,134 +17,52 @@ router.afterEach((to) => {
 });
 
 // -----------------------------------------------------------------------------
+// Медиа точки
 
-// const shared = {
-//   message: '123',
-// };
+function mq(prop, size) {
+  return window.matchMedia(`(${prop}: ${size}px)`).matches;
+};
 
-// shared.install = function () {
-//   Object.defineProperty(Vue.prototype, '$msg', {
-//     get () {
-//       return shared;
-//     },
-//   });
-// };
-
-// Vue.use(shared);
-
-// -----------------------------------------------------------------------------
-
-// var mql = window.matchMedia('(max-width: 600px)');
-
-// function screenTest(e) {
-//   if (e.matches) {
-//     console.log('true');
-//   } else {
-//     console.log('false');
-//   }
-// }
-
-// mql.addListener(screenTest);
-
-// Vue.prototype.$mq = window.matchMedia('(max-width: 600px)').matches;
-
-// -----------------------------------------------------------------------------
-
-// Vue.mixin({
-//   data () {
-//     return {
-//       window: {
-//         width: 0,
-//       },
-//     };
-//   },
-//   created () {
-//     window.addEventListener('resize', this.handleResize);
-//     this.handleResize();
-//   },
-//   destroyed () {
-//     window.removeEventListener('resize', this.handleResize);
-//   },
-//   methods: {
-//     handleResize () {
-//       this.window.width = document.documentElement.clientWidth;
-//     },
-//   },
-//   computed: {
-//     mq () {
-//       const screen = this.window.width;
-//       return {
-//         md: screen > 500 && screen < 768,
-//       };
-//     },
-//   },
-// });
-
-// -----------------------------------------------------------------------------
+const bp = {
+  min(size) {
+    return mq('min-width', size);
+  },
+  max(size) {
+    return mq('max-width', size);
+  },
+};
 
 const MediaBreakpoints = {
-  md: window.matchMedia('(max-width: 767px)').matches
+  bp: {
+    max: {
+      md: bp.max(767),
+    },
+  },
 };
 
 MediaBreakpoints.install = function(Vue) {
-  // Vue.mixin({
-  //   data () {
-  //     return {
-  //       window: {
-  //         width: 0,
-  //       },
-  //     };
-  //   },
-  //   created () {
-  //     window.addEventListener('resize', this.handleResize);
-  //     this.handleResize();
-  //   },
-  //   destroyed () {
-  //     window.removeEventListener('resize', this.handleResize);
-  //   },
-  //   methods: {
-  //     handleResize () {
-  //       this.window.width = document.documentElement.clientWidth;
-  //     },
-  //   },
-  //   computed: {
-  //     mq () {
-  //       const screen = this.window.width;
-  //       return {
-  //         md: screen > 500 && screen < 768,
-  //       };
-  //     },
-  //   },
-  // });
-  // ---------------------------------------------------------------------------
-  const mq = MediaBreakpoints;
-
   Vue.mixin({
     data () {
-      return {
-        bp: {
-          max: {
-            md: mq.md,
-          },
-        },
-      };
+      return MediaBreakpoints;
     },
     created () {
-      window.addEventListener('resize', this.handleResize);
-      this.handleResize ();
+      window.addEventListener('resize', this.getMatchMedia);
+      this.getMatchMedia ();
     },
     destroyed () {
-      window.removeEventListener('resize', this.handleResize);
+      window.removeEventListener('resize', this.getMatchMedia);
     },
     methods: {
-      handleResize () {
-        this.bp.max.md = window.matchMedia('(max-width: 767px)').matches;
+      getMatchMedia () {
+        this.bp.max.md = bp.max(767);
       },
     },
   });
 };
 
 Vue.use(MediaBreakpoints);
+
+// -----------------------------------------------------------------------------
 
 new Vue({
   router,
