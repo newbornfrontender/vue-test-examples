@@ -13,6 +13,7 @@
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "postcss-nested": "^3.0.0"
   }
 }
