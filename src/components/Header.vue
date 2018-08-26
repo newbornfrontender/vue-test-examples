@@ -2,7 +2,7 @@
   <header>
     <div>
       <span
-        v-bind:class="$style.title"
+        v-bind:class="[$style.title, $style.titleActive]"
         v-bind:style="{ color: titleColor }"
         v-on:click="setRandomColor"
       >{{ title }}</span>
@@ -69,6 +69,10 @@ export default {
 <style module lang="postcss">
 .title {
   cursor: pointer;
+
+  &Active {
+    font-size: 30px;
+  }
 }
 
 .routerActive {
