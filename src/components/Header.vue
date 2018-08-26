@@ -24,6 +24,9 @@ export default {
       }, {
         url: '/dynamic-attributes',
         text: 'Dynamic attributes',
+      }, {
+        url: '/media-queries',
+        text: 'Media queries',
       }],
     };
   },
