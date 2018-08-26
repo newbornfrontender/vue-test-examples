@@ -1,6 +1,6 @@
 <template>
   <section>
-    <p>Dynamic attributes</p>
+    <h1>Dynamic attributes</h1>
   </section>
 </template>
 

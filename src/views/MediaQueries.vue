@@ -1,7 +1,9 @@
 <template>
   <section>
-    <p>Media queries</p>
-    <p>{{ window.width }}</p>
+    <h1>Media queries</h1>
+    <p>
+      <b>{{ window.width }}</b>
+    </p>
     <p v-if="bp.max.md">Hidden text</p>
   </section>
 </template>
