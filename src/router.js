@@ -29,6 +29,8 @@ function title(sub) {
 export default new Router({
   mode: 'history',
   base: '/',
+  linkActiveClass: 'routerActive',
+  linkExactActiveClass: 'routerActiveExact',
   routes: [
     {
       path: '/',
