@@ -35,7 +35,7 @@ export default new Router({
       name: 'Home',
       meta: {
         lang: () => {
-          return lang();
+          return lang('ru');
         },
         title: () => {
           return title();
@@ -48,7 +48,7 @@ export default new Router({
       name: 'DynamicAttributes',
       meta: {
         lang: () => {
-          return lang();
+          return lang('ru');
         },
         title: () => {
           return title('Dynamic attributes');
@@ -61,7 +61,7 @@ export default new Router({
       name: 'MediaQueries',
       meta: {
         lang: () => {
-          return lang();
+          return lang('ru');
         },
         title: () => {
           return title('Media queries');
