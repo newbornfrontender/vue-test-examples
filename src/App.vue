@@ -1,6 +1,6 @@
 <template>
   <section id="app">
-    <Header/>
+    <Header v-bind:title="title"/>
     <Main/>
   </section>
 </template>
@@ -14,6 +14,11 @@ export default {
   components: {
     Header,
     Main,
+  },
+  data() {
+    return {
+      title: 'Примеры',
+    };
   },
 };
 </script>
