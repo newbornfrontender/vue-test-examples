@@ -2,7 +2,7 @@
   <header>
     <div>
       <span
-        v-bind:class="[$style.title]"
+        v-bind:class="$style.title"
         v-bind:style="{ color: titleColor }"
         v-on:click="setRandomColor"
       >{{ title }}</span>
@@ -14,6 +14,8 @@
           v-bind:key="item.id"
         >
           <router-link
+            v-bind:active-class="$style.routerActive"
+            v-bind:exact-active-class="$style.routerActiveExact"
             v-bind:to="item.url"
             v-bind:exact="item.exact"
           >{{ item.text }}</router-link>
@@ -41,7 +43,7 @@ export default {
         order: '1',
         url: '/',
         text: 'Главная',
-        exact: true,
+        exact: false,
       }, {
         order: '3',
         url: '/dynamic-attributes',
@@ -67,5 +69,13 @@ export default {
 <style module lang="postcss">
 .title {
   cursor: pointer;
+}
+
+.routerActive {
+  color: green;
+}
+
+.routerActiveExact {
+  color: red;
 }
 </style>
