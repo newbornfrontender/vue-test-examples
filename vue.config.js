@@ -2,7 +2,7 @@ module.exports = {
   css: {
     loaderOptions: {
       css: {
-        localIdentName: '[name]__[local]--[hash:base64:5]',
+        localIdentName: '[name]_[local]__[hash:base64:5]',
         camelCase: 'only',
       },
     },
