@@ -4,7 +4,7 @@
     <p>
       <b>{{ window.width }}</b>
     </p>
-    <p v-if="bp.max.md">Скрытый текст</p>
+    <p v-if="mq.max.md">Скрытый текст</p>
   </section>
 </template>
 
