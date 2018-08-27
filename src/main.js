@@ -17,50 +17,11 @@ router.afterEach((to) => {
 });
 
 // -----------------------------------------------------------------------------
-// Медиа точки
+// Медиа-значения
 
-function mq(prop, size) {
-  return window.matchMedia(`(${prop}: ${size}px)`).matches;
-};
+import MediaQueries from './plugins/media-queries';
 
-const bp = {
-  min(size) {
-    return mq('min-width', size);
-  },
-  max(size) {
-    return mq('max-width', size);
-  },
-};
-
-const MediaBreakpoints = {
-  bp: {
-    max: {
-      md: bp.max(767),
-    },
-  },
-};
-
-MediaBreakpoints.install = function(Vue) {
-  Vue.mixin({
-    data () {
-      return MediaBreakpoints;
-    },
-    created () {
-      window.addEventListener('resize', this.getMatchMedia);
-      this.getMatchMedia ();
-    },
-    destroyed () {
-      window.removeEventListener('resize', this.getMatchMedia);
-    },
-    methods: {
-      getMatchMedia () {
-        this.bp.max.md = bp.max(767);
-      },
-    },
-  });
-};
-
-Vue.use(MediaBreakpoints);
+Vue.use(MediaQueries);
 
 // -----------------------------------------------------------------------------
 
