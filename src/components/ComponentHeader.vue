@@ -30,7 +30,7 @@ import _ from 'lodash';
 import { setRandomColor as randomColor } from '@/mixins/randomColor';
 
 export default {
-  name: 'Header',
+  name: 'ComponentHeader',
   mixins: [
     randomColor,
   ],
@@ -67,19 +67,28 @@ export default {
 </script>
 
 <style module lang="postcss">
+:root {
+  --danger-color: red;
+  --big-font-size: 30px;
+  --fz: {
+    font-size: var(--big-font-size);
+  }
+}
+
 .title {
   cursor: pointer;
 
   &Active {
-    font-size: 30px;
+    @apply --fz;
   }
 }
 
 .routerActive {
   color: green;
+  composes: bgColor from '@/assets/styles/StyleMain.pcss';
 }
 
 .routerActiveExact {
-  color: red;
+  color: var(--danger-color);
 }
 </style>

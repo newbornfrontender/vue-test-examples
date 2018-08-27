@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'DynamicAttributes',
+  name: 'ViewDynamicAttributes',
 };
 </script>

@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'MediaQueries',
+  name: 'ViewMediaQueries',
   data () {
     return {
       window: {
