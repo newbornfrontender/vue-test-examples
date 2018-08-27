@@ -27,7 +27,7 @@
 
 <script>
 import _ from 'lodash';
-import { setRandomColor as randomColor } from '@/mixins/randomColor';
+import { setRandomColor as randomColor } from '@/mixins/random-color';
 
 export default {
   name: 'ComponentHeader',
