@@ -21,7 +21,11 @@ router.afterEach((to) => {
 
 import MediaQueries from './plugins/media-queries';
 
-Vue.use(MediaQueries);
+Vue.use(MediaQueries, {
+  max: {
+    md: 767,
+  },
+});
 
 // -----------------------------------------------------------------------------
 

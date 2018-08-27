@@ -14,20 +14,22 @@ const getMediaSizes = {
 };
 
 export default {
-  install(Vue) {
+  install(Vue, {
+    max: { md }
+  }) {
     Vue.mixin({
       data () {
         return {
           mq: {
             max: {
-              md: getMediaSizes.max(767),
+              md: getMediaSizes.max(md),
             },
           },
         };
       },
       methods: {
         checkScreenSize () {
-          this.mq.max.md = getMediaSizes.max(767);
+          this.mq.max.md = getMediaSizes.max(md);
         },
       },
       created () {
