@@ -11,13 +11,11 @@
 <script>
 export default {
   name: 'ViewMediaQueries',
-  data () {
-    return {
-      window: {
-        width: 0,
-      },
-    };
-  },
+  data: () => ({
+    window: {
+      width: 0,
+    },
+  }),
   created () {
     window.addEventListener('resize', this.getClientWidth);
     this.getClientWidth();
